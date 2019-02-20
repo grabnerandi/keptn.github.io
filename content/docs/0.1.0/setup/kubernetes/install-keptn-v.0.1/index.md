@@ -36,7 +36,9 @@ Additionally, the scripts need:
 
     **Note:** The `API Token` must have the permissions as shown in the screenshot below:
 
-    ![dt_api_token](./assets/dt_api_token.png)
+    {{< popup_image
+    link="./assets/dt_api_token.png"
+    caption="Dynatrace API token">}}
 
 ## Step 2: Download and prepare for the installation
 
@@ -125,7 +127,9 @@ Keptn contains all scripts and instructions needed to deploy the demo applicatio
 
 1. Finally, navigate to **Jenkins** > **Manage Jenkins** > **Configure System** and  scroll to the environment variables to verify whether the variables are set correctly. **Note:** The value for the parameter *DT_TENANT_URL* must start with *https://*
 
-![](./assets/jenkins-env-vars.png)
+    {{< popup_image
+    link="./assets/jenkins-env-vars.png"
+    caption="Jenkins environment variables">}}
 
 ### Troubleshooting
 
@@ -162,7 +166,9 @@ E.g., if the the value for `DOCKER_REGISTRY_IP` is unset, retrieve the value wit
     1. Click on **Preview** and **Save**.
 
     Screenshot shows this rule definition.
-    ![naming-rule](./assets/pg_naming.png)
+    {{< popup_image
+    link="./assets/pg_naming.png"
+    caption="Dynatrace naming rule">}}
 
 <!-- 
 ## Step 3: Use case walk through <a id="step-three"></a>
@@ -185,3 +191,8 @@ To explore the capabilities of keptn, follow the provided use cases that are ded
     ```console
     $ ./scripts/cleanupCluster.sh
     ```
+
+
+## Troubleshooting
+
+Please note that in case of any errors, the install script might leave some files in a inconsistent state, therefore the `setupInfrastructure.sh` file can not be run a second time without a cleanup. To prevent any issues with subsequent setup runs, we recommend to fully delete the GitHub organization, the keptn installation folder and checkout the keptn release again. (Some files may have been edited already that are not reverted in case of aborting the setup script.)
